@@ -24,5 +24,6 @@ public class PersonServiceTest {
     public void testSavedPersonHasId() {
         Person person = personService.createPerson("Johnnie B. Goode");
         assertNotNull(person.getId());
+        assertNotNull(personService.findByName("Johnnie B. Goode"));
     }
 }

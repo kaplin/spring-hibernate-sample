@@ -20,4 +20,9 @@ public class PersonService {
         em.persist(person);
         return person;
     }
+
+    public Person findByName(String name) {
+        return em.createQuery("from Person where name = ?", Person.class).
+                setParameter(1, name).getSingleResult();
+    }
 }
